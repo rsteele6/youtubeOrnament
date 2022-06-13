@@ -1,0 +1,21 @@
+extends base_layout
+
+block head
+
+    - var titleVar = "YouTube Holiday Ornament Control Panel | Settings"
+
+block content   
+        
+   div.content-box
+        section
+            div#danger-zone-section.section-wrapper
+                h1 Settings
+                div.danger-zone-wrapper
+                    form(action='/reboot')
+                        input#reboot(type='submit' value='Reboot ornament')
+                        br
+                    form(action='/shutdown')
+                        input#shutdown(type='submit' value='Shut down ornament')
+                        br
+                    form(action='/')
+                        input#go-back.btn.btn-small(type='submit' value='Go back')

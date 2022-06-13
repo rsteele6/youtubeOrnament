@@ -1,0 +1,20 @@
+extends base_layout
+
+block head
+
+    - var titleVar = "YouTube Holiday Ornament Control Panel | Results"
+
+block content
+    div.allow-overflow.content-box
+        section
+            div.section-wrapper
+                h1 Results:
+                div.results-wrapper
+                    each heading, index in headings 
+                        p= heading 
+                        p 
+                            a(href=videos[index]) Play
+                        br
+                    form(action='/')
+                        input.btn.btn-small(type='submit' value='Go back')
+

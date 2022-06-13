@@ -1,0 +1,380 @@
+:root
+{
+    --main-font-color: #4d4d4d;
+    --christmas-green: #00873E;
+    --christmas-red:#ff0000;
+    --form-background: #e6e6e6;
+    --btn-text: #ffffff;
+    --btn-border: #cccccc;
+    --background: #EAEAE9;
+    --footer-bottom-background: #c1c1be;
+    --footer-top-background:  #8f8f8a;
+}
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a
+{
+    text-decoration: none;
+    color: var(--btn-text);
+}
+.results-wrapper, .page-404-wrapper
+{
+    padding: 20px;
+}
+.results-wrapper a
+{
+    color: var(--main-font-color);
+    font-weight:900;
+}
+.results-wrapper a:hover
+{
+    font-weight:400;
+}
+
+footer
+{
+    display: none;
+    width: 100%;
+    left: 0;
+}
+
+#footer-top
+{
+    background-color: var(--footer-top-background);
+}
+#footer-bottom
+{
+    background-color: var(--footer-bottom-background);
+}
+
+footer ul
+{
+    text-align: center;
+    list-style-type: none;
+    overflow:hidden;
+    margin: 0;
+}
+.copyright-text
+{
+    font-size:small;
+}
+
+footer li
+{
+    display: inline-block;
+    padding: 20px;
+}
+
+footer li a
+{
+    display: block;
+    padding: 8px;
+}
+html 
+{
+    height: 100%;
+}
+
+body 
+{
+    font-family: 'Roboto', sans-serif;
+    color:var(--main-font-color);
+    margin: 5%;
+    background-image: url("/img/background.jpg");
+    background-size:cover;
+    background-repeat: no-repeat; 
+    background-color: var(--background);
+    min-height: 100%;
+    overflow-y: hidden;
+    overflow-x:hidden; 
+}
+.allow-overflow
+{
+    overflow-x:visible;
+    overflow-y:visible;
+}
+
+h1, h2
+{
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 24px;
+    text-align:center;
+    margin-top: 40px;
+    padding-top: 20px;
+    color: var(--christmas-red);
+}
+.page-404 h1
+{
+    padding-top: 0;
+    margin-top: 20px;
+}
+
+.form-wrapper label
+{
+    font-size: 14px;
+}
+
+.content-box
+{
+    margin-top: 35%;
+    background-color: var(--background);
+    border-radius: 15px;
+}
+
+.preset-wrapper
+{
+    display:flex;
+    justify-content:space-between;
+    padding: 20px;
+}
+
+ .danger-zone-wrapper
+{
+    display: flex;
+    flex-direction:column;
+    padding:20px;
+} 
+ .danger-zone-wrapper input[type=submit]
+{
+    margin-bottom: 20px;
+} 
+#go-back
+{
+    width: 30%;
+    padding: 14px 20px;
+}
+/* #reboot, #shutdown
+{
+    background-color:var(--christmas-red);
+    border-color: var(--christmas-green);
+}
+#reboot input[type=submit]:hover , #shutdown input[type=submit]:hover
+{
+   background-color: var(--btn-text);
+} */
+
+.preset-wrapper input[type=submit], .page-404 input[type=submit], .danger-zone-wrapper input[type=submit]
+{
+    width: 100%;
+    background-color: var(--christmas-green);
+    color: var(--btn-text);
+    padding: 14px 35px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* TODO: refactor input buttons using these */
+.btn
+{
+    background-color: var(--christmas-green);
+    color: var(--btn-text);
+    padding: 14px 35px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn-small
+{
+    width: 35%;
+    padding: 14px 25px;
+}
+
+.form-wrapper input[type=text], select
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid var(--btn-border);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-wrapper input[type=submit]
+{
+    width: 100%;
+    background-color: var(--christmas-green);
+    color: var(--btn-text);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover 
+{
+    background-color: var(--btn-text);
+    color: var(--christmas-green);
+    font-weight:600;
+    border:solid 0.5px;
+    border-color: var(--christmas-red);
+}
+.form-wrapper
+{
+    border-radius: 5px;
+    padding: 20px;
+    text-align:center;
+}
+#settings-lnk a
+{
+    color: var(--main-font-color);
+}
+#settings-lnk
+{
+    padding: 20px;
+}
+.page-404
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transform: translateY(200px);
+    
+}
+.page-404 h1
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* IPad portrait */
+@media only screen and (min-device-width: 768px)
+{
+    .btn-small
+    {
+        width: 20%;
+        padding: 14px 20px;
+    }
+    
+    .content-box
+    {
+        margin-top: 33%;
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+    h2
+    {
+        font-size: 32px;
+    }
+    .form-wrapper label
+    {
+        font-size: 16px;
+    }
+    .preset-wrapper
+    {
+        border-radius: 5px;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .form-wrapper input[type=submit]
+    {
+        width: 50%;
+    }
+
+    .form-wrapper input[type=text]
+    {
+        width: 50%;
+    }
+    .page-404
+    {
+        transform: translateY(375px);
+    }   
+
+    footer
+    {
+        display:block;
+        position:fixed;
+        bottom: 0;
+    }
+}
+
+/* IPad landscape */
+@media only screen and (min-device-width: 1024px)
+{
+    .btn-small
+    {
+        width: 25%;
+        padding: 14px 25px;
+    }
+    
+    .content-box
+    {
+        margin-top: 10%;
+        margin-right: 25%;
+        margin-left: 25%;
+    }
+    footer
+    {
+        display:block;
+        position:fixed;
+        bottom: 0;
+    }
+    .page-404
+    {
+        transform: translateY(315px);
+    } 
+    .page-404 input[type=submit]
+    {
+        width: 100%;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-device-width: 1025px)
+{
+
+}
+
+/* Large desktop */
+@media only screen and (min-device-width: 1281px)
+{
+    .content-box
+    {
+        margin-right: 30%;
+        margin-left: 30%;
+    }
+    .page-404
+    {
+        transform: translateY(410px);
+    } 
+}
+
+/* laptop */
+@media only screen and (min-device-width: 1536px)
+{
+    .content-box
+    {
+        margin-top: 8%;
+    }
+    .page-404
+    {
+        transform: translateY(450px);
+    } 
+}
+
+/* X-Large desktop */
+@media only screen and (min-device-width: 1920px)
+{
+    .btn-small
+    {
+        width: 15%;
+        padding: 14px 15px;
+    }
+    .content-box
+    {
+        margin-top: 10%;
+    }
+    .page-404
+    {
+        transform: translateY(450px);
+    } 
+}
