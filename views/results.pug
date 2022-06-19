@@ -5,16 +5,16 @@ block head
     - var titleVar = "YouTube Holiday Ornament Control Panel | Results"
 
 block content
-    div.allow-overflow.content-box
+    div.container-fluid
         section
-            div.section-wrapper
+            div#results-container.container
                 h1 Results:
-                div.results-wrapper
-                    each heading, index in headings 
+                each heading, index in headings 
+                    div.container.result-container
                         p= heading 
                         p 
-                            a(href=videos[index]) Play
-                        br
-                    form(action='/')
-                        input.btn.btn-small(type='submit' value='Go back')
+                            a.btn-green.btn-pill(href=videos[index]) Play
+                        hr
+                form(action='/')
+                    input.btn-green.btn-go-back(type='submit' value='Go back')
 

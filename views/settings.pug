@@ -4,18 +4,20 @@ block head
 
     - var titleVar = "YouTube Holiday Ornament Control Panel | Settings"
 
-block content   
-        
-   div.content-box
-        section
-            div#danger-zone-section.section-wrapper
-                h1 Settings
-                div.danger-zone-wrapper
-                    form(action='/reboot')
-                        input#reboot(type='submit' value='Reboot ornament')
-                        br
-                    form(action='/shutdown')
-                        input#shutdown(type='submit' value='Shut down ornament')
-                        br
-                    form(action='/')
-                        input#go-back.btn.btn-small(type='submit' value='Go back')
+block content    
+    div.hero.container-fluid
+        div.content-wrapper-absolute.container
+            section
+                div.container
+                    h1 Settings
+                    p.center-text  Be careful here; selecting any of these options will trigger the action immediately.
+                    div.container.btn-flex-col
+                        form(action='/reboot')
+                            input#reboot.btn-red.btn-pill(type='submit' value='Reboot')
+                            br
+                        form(action='/shutdown')
+                            input#shutdown.btn-red.btn-pill(type='submit' value='Shut down')
+                            br
+                    div.container    
+                        form(action='/')
+                            input.btn-green.btn-go-back(type='submit' value='Go back')

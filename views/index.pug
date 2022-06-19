@@ -3,30 +3,30 @@ extends base_layout
 block head 
     - var titleVar = "YouTube Holiday Ornament Control Panel"
 block content
-    div.content-box
-        section
-            div#preset-section.section-wrapper
-                h2 Commercial presets:
-                div.preset-wrapper
-                    form(action='http://localhost:3000/commercials/70s')
-                        input(type='submit' value='70s')
-                    form(action='http://localhost:3000/commercials/80s')
-                        input(type='submit' value='80s')
-                    form(action='http://localhost:3000/commercials/90s')
-                        input(type='submit' value='90s')
-        section
-            div#form-section.section-wrapper
-                h2 Play any video on YouTube!
-                div.form-wrapper
-                    form(method='POST' action='/results')
-                        label(for='search') Enter keyword(s) here:
-                        br
-                        input#searchBox(type='text' name='search')
-                        br
-                        input#searchButton(type='submit' value='Search' name='submitButton')
-                        br
-        section 
-            div.section-wrapper
-                div#settings-lnk
-                    p 
+    div.hero.container-fluid
+        div.content-wrapper-absolute.container
+            section
+                div.container
+                    h2 Commercial presets:
+                    div.btn-flex-row.container
+                        form(action='http://localhost:3000/commercials/70s')
+                            input.btn-green.btn-pill(type='submit' value='70s')
+                        form(action='http://localhost:3000/commercials/80s')
+                            input.btn-green.btn-pill(type='submit' value='80s')
+                        form(action='http://localhost:3000/commercials/90s')
+                            input.btn-green.btn-pill(type='submit' value='90s')
+            section
+                div.container
+                    h2 Play any video on YouTube!
+                    div.form-wrapper.container
+                        form(method='POST' action='/results')
+                            label(for='search') Enter keyword(s) here:
+                            br
+                            input#searchBox(type='text' name='search')
+                            br
+                            input#searchButton.btn-green(type='submit' value='Search' name='submitButton')
+                            br
+            section 
+                div
+                    p#settings-lnk
                         a(href="/settings") Settings

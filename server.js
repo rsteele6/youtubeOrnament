@@ -90,7 +90,7 @@ app.post('/results', async (req, res) =>
     try 
     {
         const submitPressed = req.body.submitButton;
-        const maxResults = 5;
+        const maxResults = 25;
     
         if (submitPressed)
         {

@@ -3,10 +3,11 @@ extends base_layout
 block head 
     - var titleVar = "YouTube Holiday Ornament Control Panel | 404 - Page not found"
 block content 
-    div.page-404.content-box
-        section
-            div.section-wrapper
-                h1 404 - Page not found
-                div.results-wrapper
-                    form(action='/')
-                        input(type='submit' value='Back to home')
+    div.hero.container-fluid
+        div.page-404.content-wrapper-absolute.container
+            section
+                div.section-wrapper.container
+                    h1 404 - Page not found
+                    div.results-wrapper.container
+                        form(action='/')
+                            input.btn-green.btn-go-back(type='submit' value='Back to home')
