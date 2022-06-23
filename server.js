@@ -76,6 +76,7 @@ app.get("/commercials/:decade", async (req, res) =>
         if (redirectTarget) 
         {
             firefoxOpen = childProcess.exec(`firefox ${redirectTarget} --kiosk`);
+            res.redirect(200, '/');
         }
     } 
     catch (err) 
@@ -84,7 +85,7 @@ app.get("/commercials/:decade", async (req, res) =>
     }
 });
 
-// Free choice
+// Displays search results from YouTube API
 app.post('/results', async (req, res) => 
 {
     try 
@@ -141,6 +142,7 @@ app.get("/results/:videoId", async (req, res) =>
         if (req.params.videoId) 
         {
             firefoxOpen = childProcess.exec(`firefox ${videoBaseURL}${req.params.videoId} --kiosk`);
+            res.redirect(200, '/');
         }
     
         else 
@@ -163,13 +165,31 @@ app.get('/settings', (req, res) =>
     });
 });
 
+// Stop video (Kills Firefox process)
+app.get('/killVideo', (req, res) =>
+{
+    try 
+    {
+        if (firefoxOpen) 
+        {
+            firefoxOpen.kill();
+            res.redirect(200, '/');
+        }
+    } 
+    catch (err) 
+    {
+        res.send(err);
+    }
+});
+
+
+
 // Reboot device
 app.get('/reboot', async (req, res) =>
 {
     try 
     {
         childProcess.exec('sudo /sbin/shutdown -r now');
-
         res.redirect(200, '/');
     } 
     catch (err) 
@@ -184,7 +204,6 @@ app.get('/shutdown', (req, res) =>
     try 
     {
         childProcess.exec('sudo /sbin/shutdown now');
-
         res.redirect(200, '/');
     } 
     catch (err) 
