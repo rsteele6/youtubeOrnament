@@ -76,7 +76,6 @@ app.get("/commercials/:decade", async (req, res) =>
         if (redirectTarget) 
         {
             firefoxOpen = childProcess.exec(`firefox ${redirectTarget} --kiosk`);
-            res.redirect(200, '/');
         }
     } 
     catch (err) 
@@ -142,7 +141,6 @@ app.get("/results/:videoId", async (req, res) =>
         if (req.params.videoId) 
         {
             firefoxOpen = childProcess.exec(`firefox ${videoBaseURL}${req.params.videoId} --kiosk`);
-            res.redirect(200, '/');
         }
     
         else 
@@ -170,11 +168,7 @@ app.get('/killVideo', (req, res) =>
 {
     try 
     {
-        if (firefoxOpen) 
-        {
-            firefoxOpen.kill();
-            res.redirect(200, '/');
-        }
+        childProcess.exec('sudo pkill -f firefox');
     } 
     catch (err) 
     {
